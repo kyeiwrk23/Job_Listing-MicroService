@@ -1,0 +1,2686 @@
+{
+  "info": {
+    "_postman_id": "229e9707-a123-4a6d-aa65-89cd9be51cee",
+    "name": "Job Application",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51597159",
+    "_collection_link": "https://go.postman.co/collection/51597159-229e9707-a123-4a6d-aa65-89cd9be51cee?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Job Service",
+      "item": [
+        {
+          "name": "Create Job",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Finance & Accounting Assistant\",\r\n  \"description\": \"Handle invoicing, expense tracking, and financial reporting while supporting the finance team.\",\r\n  \"location\": \"Amsterdam, Netherlands\",\r\n  \"minSalary\": \"38000\",\r\n  \"maxSalary\": \"48000\",\r\n  \"contractType\": \"Full-time\",\r\n  \"companyId\": 5\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/jobs",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Jobs",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/jobs?pageNumber=1&pageSize=5&sortBy=jobId&sortOrder=asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "jobId"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Job",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"Senior Full Stack Software Developer\",\r\n    \"description\":\"Designs, develops, and maintains scalable web applications across frontend and backend systems. Works closely with product, design, and DevOps teams to deliver high‑quality features, optimize performance, and ensure secure, reliable deployments. Contributes to architectural decisions, code reviews, and continuous improvement initiatives within an agile environment\",\r\n    \"location\":\"Monteriggioni, Tuscany, Italy \",\r\n    \"minSalary\":\"55,000\",\r\n    \"maxSalary\":\"75,000\",\r\n     \"companyId\": 1,\r\n    \"contractType\":\"Full‑time, Permanent,Part-time\"\r\n   \r\n}"
+            },
+            "url": {
+              "raw": "localhost:8086/api/jobs/13",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs",
+                "13"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Company by JobId",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/jobs/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Modify job",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"title\": \"Senior Backend Engineer\",\r\n    \"description\": \"Design and build scalable microservices, optimize API performance, and collaborate with cross‑functional teams to deliver high‑quality backend systems.\",\r\n    \"location\": \"Berlin, Germany\",\r\n    \"minSalary\": \"70000\",\r\n    \"maxSalary\": \"95000\",\r\n    \"contractType\": \"Full-time,Remote,Hybrid,Freelance\",\r\n    \"companyId\": 3\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/jobs/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All Jobs Published by a Company",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/jobs/2/joblist",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs",
+                "2",
+                "joblist"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "search for Jobs",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/jobs/keywords?title=Senior Backend Engine&location=Germany&jobType=Full‑time",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "jobs",
+                "keywords"
+              ],
+              "query": [
+                {
+                  "key": "title",
+                  "value": "Senior Backend Engine"
+                },
+                {
+                  "key": "location",
+                  "value": "Germany"
+                },
+                {
+                  "key": "jobType",
+                  "value": "Full‑time"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Company Service",
+      "item": [
+        {
+          "name": "create company",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"NextStep Talent Group\",\r\n    \"description\": \"Specialists in executive search and leadership hiring for Fortune 500 companies and high‑growth enterprises.\",\r\n    \"website\": \"https://www.nextsteptalentgroup.com\",\r\n    \"email\": \"contact@nextsteptalentgroup.com\",\r\n    \"userId\": \"f9a5d88f-4dfd-4e7f-9682-425d2dfa582d\",\r\n    \"location\": \"Sydney, Australia\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/companies",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "companies"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get All companies",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/companies?pageNumber=0&pageSize=20&sortBy=companyId&sortOrder=asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "companies"
+              ],
+              "query": [
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "companyId"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Company by ID",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/companies/5",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "companies",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Company",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "  {\r\n    \"name\": \"EliteHire Partners\",\r\n    \"description\": \"Executive search and leadership hiring firm specializing in C-level and senior management roles.\",\r\n    \"website\": \"https://www.elitehirepartners.com\",\r\n    \"email\": \"executive@elitehirepartners.com\",\r\n    \"location\": \"Sydney, Australia\",\r\n    \"reviewId\": 5\r\n  }"
+            },
+            "url": {
+              "raw": "localhost:8086/api/companies/5",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "companies",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update company",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"CareerLaunch Recruiters\",\r\n    \"description\": \"A recruitment agency helping early‑career professionals land roles in marketing, sales, and product operations.\",\r\n    \"website\": \"https://www.careerlaunchrecruiters.com\",\r\n    \"email\": \"hello@careerlaunchrecruiters.com\",\r\n    \"userId\": \"a57e84fa-3648-486f-8e25-5e711fcfe824\",\r\n    \"location\": \"Toronto, Canada\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/companies/5",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "companies",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Review Service",
+      "item": [
+        {
+          "name": "Get reviews from A company",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/reviews?companyId=1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "reviews"
+              ],
+              "query": [
+                {
+                  "key": "companyId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Review",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Productive but Challenging\",\r\n  \"description\": \"Fast-paced environment that encourages learning and innovation. Management expectations are high, which can be stressful at times. Despite the pressure, the experience is professionally enriching.\",\r\n  \"rating\": 4.0\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/reviews?companyId=5",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "reviews"
+              ],
+              "query": [
+                {
+                  "key": "companyId",
+                  "value": "5"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete review",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"\",\r\n    \"description\":\"\",\r\n    \"rating\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/reviews/4",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "reviews",
+                "4"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Review",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"Good Culture, Room for Improvement\",\r\n    \"description\":\"Friendly colleagues and a collaborative atmosphere. Some processes feel outdated, and communication between departments can be inconsistent.\",\r\n    \"rating\":3.7,\r\n    \"companyId\":1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/reviews/3",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "reviews",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get a review",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"\",\r\n    \"description\":\"\",\r\n    \"rating\":\"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/reviews/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "reviews",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Application Service",
+      "item": [
+        {
+          "name": "Create Application",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": " {\r\n    \"jobId\": 1,\r\n    \"applicantId\": \"f171c761-25e3-4314-9093-4be1bb4520f6\",\r\n    \"resumeUrl\": \"https://cdn.example.com/resumes/li-wei-backend.pdf\",\r\n    \"coverLetter\": \"I am excited about the opportunity to join your backend engineering team. My background includes designing scalable APIs, implementing CI/CD pipelines, and working with cloud‑native technologies such as Kubernetes and AWS.\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/application",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Status",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\":\"reviewing\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/application/5/status",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application",
+                "5",
+                "status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "WithDraw Application",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/application/5",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application",
+                "5"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Application By ID",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/application/6",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application",
+                "6"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Job Statistics",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/application/stats?jobId=1",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application",
+                "stats"
+              ],
+              "query": [
+                {
+                  "key": "jobId",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List all Application by JobId",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/application?jobId=1&pageNumber=1&pageSize=5&sortBy=applicationId&sortOrder=asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application"
+              ],
+              "query": [
+                {
+                  "key": "jobId",
+                  "value": "1"
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "1"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "applicationId"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List all Application by Applicant",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/application/jobseeker?applicantId=85ed1f54-607b-469b-ae9f-12db604ff0ac&pageNumber=0&pageSize=20&sortBy=applicationId&sortOrder=asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "application",
+                "jobseeker"
+              ],
+              "query": [
+                {
+                  "key": "applicantId",
+                  "value": "85ed1f54-607b-469b-ae9f-12db604ff0ac"
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "20"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "applicationId"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "register User",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"userName\": \"elena.rossi\",\r\n    \"firstName\": \"Elena\",\r\n    \"lastName\": \"Rossi\",\r\n    \"email\": \"elena.rossi@example.com\",\r\n    \"phoneNumber\": \"+39-347-555-6621\",\r\n    \"password\": \"elena\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/users",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User by Id",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/users/256cc94b-fcf8-4459-9aac-c2b4f353b70a",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "256cc94b-fcf8-4459-9aac-c2b4f353b70a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/users/256cc94b-fcf8-4459-9aac-c2b4f353b70a",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "256cc94b-fcf8-4459-9aac-c2b4f353b70a"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update user",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\":\"elena\",\r\n    \"lastName\": \"rossi\",\r\n    \"phoneNumber\": \"+39-347-555-6621\",\r\n    \"email\":\"elena.rossi@example.com\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/users/3010b7d8-e26d-4283-8a24-79a61007c768",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "3010b7d8-e26d-4283-8a24-79a61007c768"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Deactivate user",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/users/3010b7d8-e26d-4283-8a24-79a61007c768/suspend",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "3010b7d8-e26d-4283-8a24-79a61007c768",
+                "suspend"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Activate users",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\":\"Kofi\",\r\n    \"lastName\": \"Amoateng\",\r\n    \"phoneNumber\": \"393712343450\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/users/3010b7d8-e26d-4283-8a24-79a61007c768/activate",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "3010b7d8-e26d-4283-8a24-79a61007c768",
+                "activate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "All users based on role OR status",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8086/api/users?pageNumber=0&pageSize=5&sortBy=userId&sortOrder=asc",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "roles",
+                  "value": "job_seeker",
+                  "disabled": true
+                },
+                {
+                  "key": "status",
+                  "value": "active",
+                  "disabled": true
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "0"
+                },
+                {
+                  "key": "pageSize",
+                  "value": "5"
+                },
+                {
+                  "key": "sortBy",
+                  "value": "userId"
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "resetPassword",
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code_with_pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "clientId",
+                  "value": "job-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "client_authentication",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "scope",
+                  "value": "openid email profile roles",
+                  "type": "string"
+                },
+                {
+                  "key": "tokenName",
+                  "value": "job-oauth2-pkce",
+                  "type": "string"
+                },
+                {
+                  "key": "redirect_uri",
+                  "value": "http://localhost:5173",
+                  "type": "string"
+                },
+                {
+                  "key": "addTokenTo",
+                  "value": "header",
+                  "type": "string"
+                },
+                {
+                  "key": "useBrowser",
+                  "value": false,
+                  "type": "boolean"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "http://localhost:8080/realms/job-app/protocol/openid-connect/auth",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"newPassword\":\"elena\"\r\n\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8086/api/users/3010b7d8-e26d-4283-8a24-79a61007c768/reset-password",
+              "host": [
+                "localhost"
+              ],
+              "port": "8086",
+              "path": [
+                "api",
+                "users",
+                "3010b7d8-e26d-4283-8a24-79a61007c768",
+                "reset-password"
+              ],
+              "query": [
+                {
+                  "key": "roles",
+                  "value": "job_seeker",
+                  "disabled": true
+                },
+                {
+                  "key": "status",
+                  "value": "active",
+                  "disabled": true
+                },
+                {
+                  "key": "pageNumber",
+                  "value": "0",
+                  "disabled": true
+                },
+                {
+                  "key": "pageSize",
+                  "value": "10",
+                  "disabled": true
+                },
+                {
+                  "key": "sortBy",
+                  "value": "userId",
+                  "disabled": true
+                },
+                {
+                  "key": "sortOrder",
+                  "value": "asc",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Actuator",
+      "item": [
+        {
+          "name": "Change logger level",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"configuredLevel\":\"INFO\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8888/actuator/loggers/com.kay.configserver.ConfigserverApplication",
+              "host": [
+                "localhost"
+              ],
+              "port": "8888",
+              "path": [
+                "actuator",
+                "loggers",
+                "com.kay.configserver.ConfigserverApplication"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Refresh-Scope",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "localhost:8084/actuator/busrefresh",
+              "host": [
+                "localhost"
+              ],
+              "port": "8084",
+              "path": [
+                "actuator",
+                "busrefresh"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
