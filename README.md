@@ -9,19 +9,27 @@ This project consists of the following microservices:
 ### Core Infrastructure
 
 Eureka Server:- Service discovery for all microservices
+
 Config Server:- Centralized configuration using Git‑backed config
+
 API Gateway:- Single entry point, OAuth2 Resource Server (Keycloak)
 
 ### Business Domain Services
 Company Service:- Manages companies/organizations that publish jobs
+
 Job Service:- Manages job listings created by companies
+
 Submit Application Service: Handles job applications submitted by users
+
 User Service:- Manages user profiles and authentication integration
+
 Review Service:- Users publish reviews for companies
 
 ### Observability Stack
 Zipkin:- Distributed tracing
+
 Prometheus:- Metrics scraping
+
 Grafana:- Metrics visualization dashboards
 
 ### Database
@@ -100,20 +108,35 @@ Grafana:- Metrics visualization dashboards
 ## Project Structure
 
 /eureka-server
+
 /config-server
+
 /gateway
+
 /company-service
+
 /job-service
+
 /submit-application-service
+
 /user-service
+
 /review-service
+
 /observability
+
     /prometheus
+
     /grafana
+
     /zipkin
+
 /deploy
+
     build_project.sh
+
     docker-compose.yml
+
 
 ## How to Run the Project
 
