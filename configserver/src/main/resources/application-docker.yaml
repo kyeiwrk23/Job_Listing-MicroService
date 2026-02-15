@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: configserver
+
+  cloud:
+    config:
+      server:
+        native: 
+          search-locations: classpath:/config
+
+
+  rabbitmq:
+    host: rabbitmq
+    username: guest
+    password: guest
+    port: 5672
+    connection-timeout: 30000
+
+server:
+  port: 8888
+
+logging:
+  level:
+    org.springframework.cloud.config.server: DEBUG
+
+# Eureka
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
+
+
+
+
+
+
+
+

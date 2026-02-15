@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: job
+  config:
+    import: optional:configserver:http://configserver:8888
+
+
+
+
+
+
+
+
+
+

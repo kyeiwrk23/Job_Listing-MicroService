@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: submitapplication
+
+#  config:
+#    import: optional:configserver:http://localhost:8888
+
+
+
+
+
+
+
+
+

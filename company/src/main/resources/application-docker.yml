@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: company
+  config:
+    import: optional:configserver:http://configserver:8888
+
+
+  cloud:
+    function:
+      definition: companyRating
+    stream:
+        bindings:
+          companyRating-in-0:
+            destination: rate.exchange
+            group: companyConsumer
+            content-type: application/json
+
+        rabbit:
+          bindings:
+            companyRating-in-0:
+              consumer:
+                binding-routing-key: "#"
+                exchange-type: topic
+
+
+logging:
+  level:
+    org.springframework.cloud.stream: DEBUG

@@ -1,0 +1,78 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://postgres:5432/reviews
+    username: postgres
+    password: 23Cel
+    driver-class-name: org.postgresql.Driver
+
+  rabbitmq:
+    host: rabbitmq
+    username: guest
+    password: guest
+    port: 5672
+
+server:
+  port: 8082
+
+# Flyway
+  flyway:
+    validate-on-migrate: true
+    baseline-on-migrate: true
+    enabled: true
+    locations: filesystem:/app/db/migration
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgresPlusDialect
+
+# Eureka
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+
+
+#Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    prometheus:
+      access: unrestricted
+    metrics:
+      access: unrestricted
+
+
+# Zipkin
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+
+# Log data to file
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-history: 7
+      max-file-size: 12MB
+  level:
+    org.flywaydb: DEBUG

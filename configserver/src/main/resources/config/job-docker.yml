@@ -1,0 +1,105 @@
+spring:
+  # Postgres
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: postgres
+    password: 23Cel
+    url: jdbc:postgresql://postgres:5432/job
+
+  rabbitmq:
+    host: rabbitmq
+    username: guest
+    password: guest
+    port: 5672
+
+# Flyway
+  flyway:
+    validate-on-migrate: true
+    baseline-on-migrate: true
+    enabled: true
+    locations: filesystem:/app/db/migration
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+      dialect: org.hibernate.dialect.PostgresPlusDialect
+
+server:
+  port: 8085
+
+# Eureka
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+
+
+
+
+
+# Log data to file
+logging:
+  file:
+    name: logs/${spring.application.name}.log
+  logback:
+    rollingpolicy:
+      max-history: 7
+      max-file-size: 12MB
+  level:
+    org.flywaydb: DEBUG
+
+# Resilience4j
+resilience4j:
+  circuitbreaker:
+    instances:
+      companyReviewCircuitBreaker:
+        register-health-indicator: true
+        failure-rate-threshold: 50
+        sliding-window-type: count_based
+        sliding-window-size: 10
+        permitted-number-of-calls-in-half-open-state: 10
+        automatic-transition-from-open-to-half-open-enabled: true
+        wait-duration-in-open-state:
+          seconds: 5
+        minimum-number-of-calls: 5
+  retry:
+    instances:
+      companyReviewRetry:
+        max-attempts: 4
+        wait-duration:
+          seconds: 2
+
+# Actuator
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    circuit breakers:
+      enabled: true
+    retries:
+      enabled: true
+    prometheus:
+      access: unrestricted
+    metrics:
+      access: unrestricted
+
+# Zipkin
+  tracing:
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: http://zipkin:9411/api/v2/spans
+

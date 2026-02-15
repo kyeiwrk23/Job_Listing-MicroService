@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: gateway
+
+  config:
+    import: optional:configserver:http://configserver:8888
+
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/realms/job-app/protocol/openid-connect/certs
+
+logging:
+  level:
+    io.github.resilience4j.circuitbreaker: DEBUG
+
+
+
+
+
+
+
+
+
+

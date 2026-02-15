@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: review
+
+  config:
+    import: optional:configserver:http://configserver:8888
+
+
+
+  cloud:
+    function:
+      definition: addReview
+
+    stream:
+      bindings:
+        addReview-out-0:
+          destination: rate.exchange
+          content-type: application/json
+
+      rabbit:
+        bindings:
+          addReview-out-0:
+            producer:
+              routing-key-expression: "'rate.tracking'"
+
+
+logging:
+  level:
+    org.springframework.cloud.stream: DEBUG
