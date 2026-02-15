@@ -148,7 +148,7 @@ cd deploy/docker
 
 This script builds all services using Maven and copies the JARs into the deployment directory(target).
 
-### 2️ Start the entire system with Docker
+### 2️. Start the entire system with Docker
 docker compose up --build -d
 
 NOTE:
