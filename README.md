@@ -151,3 +151,7 @@ This script builds all services using Maven and copies the JARs into the deploym
 ### 2️ Start the entire system with Docker
 docker compose up --build -d
 
+NOTE:
+    After the system start:
+*     Open keycloak and enter credentials.
+*     Create realms and client or load realms from /deploy dir
